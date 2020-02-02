@@ -1,6 +1,10 @@
-# cognitive_solving_rnn
+# Elucidating Cognitive Processes Using LSTMs
 An Artificial Neural Network that applies LSTM layers to solve a number of cognitive tasks.
 This project was developed for my Master Thesis at C3NL, Imperial College London under the supervision of Professor Robert Leech.
+
+For further read please see:
+* https://fenix.tecnico.ulisboa.pt/cursos/mebiom/dissertacao/1409728525632094
+* https://ccneuro.org/2019/Papers/ViewPapers.asp?PaperNum=1201
 
 ## Getting started
 To avoid any conflict with your existing Python setup, and to keep this project self-contained, it is suggested to work in a virtual environment with [`virtualenv`](http://docs.python-guide.org/en/latest/dev/virtualenvs/). To install `virtualenv`:
