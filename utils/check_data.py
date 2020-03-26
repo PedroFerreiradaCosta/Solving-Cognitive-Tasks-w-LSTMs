@@ -1,5 +1,5 @@
 import numpy as np
-import pylab as plt
+import matplotlib.pyplot as plt
 import pickle
 import load_data as ld
 
@@ -8,7 +8,7 @@ from keras.utils import to_categorical
 
 from collections import Counter
 
-def check_data( file_name, task):
+def check_data(file_name, task):
 	"""
 	Plots the dataset into the different inputs and outputs provided:
 		Rule input, fixation input, modality 1, modelity 2, fixation output,
@@ -24,7 +24,7 @@ def check_data( file_name, task):
 	classes_in = 71
 	classes_out = 33
 	task = str(task)
-	data = ld.load_data(file = 'file_name', task = task)
+	data = ld.load_data(file = file_name, task = task)
 
 	X_training = data['X_training']
 	Y_training = data['Y_training']
@@ -83,7 +83,7 @@ def data_stats(file_name, task):
 
 	"""
 
-	logdir = './dataset/run-201805141312/'
+	logdir = "./dataset/"+ file_name
 
 	Tx = 600
 	classes_in = 71

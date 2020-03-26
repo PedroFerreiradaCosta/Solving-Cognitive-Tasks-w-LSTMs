@@ -13,9 +13,7 @@ class sets(object):
 
     def __init__(self):
 
-
         self.timesteps = 600
-
         self.n_tasks = 6
         self.fixation = 1
         self.units = 32
@@ -62,7 +60,6 @@ class sets(object):
                 response = self.units + response
             Y[response,Tgo:] = 1
 
-
         return X, Y
 
 
@@ -78,7 +75,6 @@ class sets(object):
         Tstim1 = int(np.random.uniform(100,500))
 
         X,Y = self.create_set(n_task = task, stim1_dir = stim_dir, stim1_mod = stim_mod, Tstim1 = Tstim1, Tgo = Tstim1)
-
 
         data = {
                 'X': X,
@@ -189,7 +185,6 @@ class sets(object):
                 'Tgo': Tstim1,
                 'task': 'anti'
         }
-
 
         return data
 

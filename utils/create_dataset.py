@@ -1,5 +1,5 @@
 import numpy as np
-import pylab as plt
+import matplotlib.pyplot as plt
 import pickle
 import generate_trial as gt
 from datetime import datetime
@@ -24,7 +24,7 @@ def create_data(task, plot, trials):
 					5 - Delay Go Task
 					'None' - Every task drawn randomly
 		- plot	  : a boolean, to save or not a plot figure per 10 trials
-		- trials  : an integer, number of trials to be generated
+		- trials  : an integer, number of trials to be generated. Value must be >= 10
 
 	"""
 
@@ -38,7 +38,7 @@ def create_data(task, plot, trials):
 	val_trials = int(trials * 0.1)
 
 	#Generating a class of trials
-	set = gt.sets()
+	sets = gt.sets()
 
 	if not os.path.exists(logdir):
 	    os.makedirs(logdir)
@@ -81,15 +81,16 @@ def create_data(task, plot, trials):
 
 
 	for i in range(trials):
-		tasks = [set.go_task(), set.RT_go_task(), set.Dly_go_task(), set.anti_task(), set.RT_anti_task(), set.Dly_anti_task()]
+		tasks = [sets.go_task(), sets.RT_go_task(),
+				 sets.Dly_go_task(), sets.anti_task(),
+				 sets.RT_anti_task(), sets.Dly_anti_task()]
 
 		if task == 'None':
-			task_set = random.randint(0,5) # generates a random linear distribution between the 6 tasks
+			task_set = random.randint(0,5) # generates a random distribution between the 6 tasks
 		else:
 			task_set = task
 
 		temp = tasks[task_set]
-
 
 		# plots every 10th trial
 		if (plot == True and i % 10 ==0):
@@ -120,7 +121,6 @@ def create_data(task, plot, trials):
 			plt.title('Output')
 			plt.colorbar()
 			plt.savefig(logdir + 'images/trial_'+str(i)+temp['task']+'.png')
-
 
 
 		if i < trn_trials:
