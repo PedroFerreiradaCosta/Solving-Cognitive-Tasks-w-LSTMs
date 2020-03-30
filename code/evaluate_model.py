@@ -28,7 +28,7 @@ load_data = boolean, true if dataset is to be loaded, false if is to be generate
 
 
 """
-def main(load_data, folder)
+def main(load_data, folder):
 
     # folder contains trained weights. and possibly data
 
