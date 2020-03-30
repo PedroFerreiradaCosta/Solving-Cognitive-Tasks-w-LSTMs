@@ -3,7 +3,7 @@ import keras
 import pylab as plt
 import create_dataset as cdt
 import load_data as ld
-import model
+from model import cog_lstm
 from keras.models import Sequential, Model
 from keras.layers import SimpleRNN,Activation, LSTM, Dense
 from keras.utils import to_categorical, plot_model
@@ -128,7 +128,7 @@ def main(is_2layers, load_data, root_logdir=None, weight_path=None):
 	file.write('_______________________________________'+ '\n')
 
 	### defines model
-	model, first_layer, second_layer= model.cog_lstm(X_training, 
+	model, first_layer, second_layer= cog_lstm(X_training, 
 							weight_path, is_2layers,
 							Tx, classes_in, classes_out, h_units1,
 							h_units2)
