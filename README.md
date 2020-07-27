@@ -17,3 +17,11 @@ virtualenv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
+
+## Citation
+If you find this code useful for your research, please cite:
+
+    @article{daelucidating,
+    title={Elucidating Cognitive Processes Using LSTMs},
+    author={da Costa, Pedro F and Popescu, Sebastian and Leech, Robert and Lorenz, Romy}
+    year={2019}}
